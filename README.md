@@ -1,4 +1,4 @@
-# cosmic-flick-seekers
+# cfs
 
 ## Project setup
 ```
