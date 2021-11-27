@@ -10,16 +10,19 @@
 
 <script>
 import { defineComponent } from "vue";
+
+const IMG_PADDING = 40;
+
 export default defineComponent({
   name: "Canvas",
   data: () => ({
-    imgTop: -40,
-    imgLeft: -40,
+    imgTop: -IMG_PADDING,
+    imgLeft: -IMG_PADDING,
   }),
   methods: {
     handleMouseMove(e) {
-      this.imgTop = -40 + e.clientY / 80;
-      this.imgLeft = -40 + e.clientX / 80;
+      this.imgTop = -IMG_PADDING + e.clientY / (IMG_PADDING * 2);
+      this.imgLeft = -IMG_PADDING + e.clientX / (IMG_PADDING * 2);
     },
   },
   beforeMount() {
