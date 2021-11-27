@@ -19,7 +19,14 @@
         height: `${wrapDimensions.height}px`,
       }"
     >
-      <Letters v-for="letter in textConfig" :key="letter.id" :config="letter" />
+      <Collage />
+      <div data-content="Cosmic Flick Seekers">
+        <Letters
+          v-for="letter in textConfig"
+          :key="letter.id"
+          :config="letter"
+        />
+      </div>
     </div>
   </div>
 </template>
@@ -27,6 +34,7 @@
 <script>
 import { defineComponent } from "vue";
 import Letters from "./Letters.vue";
+import Collage from "./Collage.vue";
 import textConfig from "../config/text.json";
 
 const image = {
@@ -59,6 +67,7 @@ export default defineComponent({
   }),
   components: {
     Letters,
+    Collage,
   },
   methods: {
     handleMouseMove(e) {
