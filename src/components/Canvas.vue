@@ -1,6 +1,7 @@
 <template>
+  <!-- <div class="temp fixed w-screen h-screen" /> -->
   <div
-    class="background img-move w-screen h-screen overflow-hidden fixed"
+    class="background img-move w-screen h-screen overflow-hidden fixed flex justify-center"
     :style="{
       backgroundPositionX: `${imgLeft}px`,
       backgroundPositionY: `${imgTop}px`,
@@ -8,23 +9,41 @@
         autoWidth ? `auto calc(100vh + 80px)` : `calc(100vw + 80px) auto`
       }`,
     }"
-  />
-  <!-- <div class="temp fixed w-screen h-screen" /> -->
+  >
+    <div
+      class="wrapper"
+      :style="{
+        right: `${imgLeft}px`,
+        bottom: `${imgTop}px`,
+        width: `${wrapDimensions.width}px`,
+        height: `${wrapDimensions.height}px`,
+      }"
+    >
+      <Letters v-for="letter in textConfig" :key="letter.id" :config="letter" />
+    </div>
+  </div>
 </template>
 
 <script>
 import { defineComponent } from "vue";
+import Letters from "./Letters.vue";
+import textConfig from "../config/text.json";
 
 const image = {
   ratio: 16 / 9,
   width: 1920,
   height: 1080,
   denominator: 9,
-  padding: 40, // Pixels hidden off page
+  padding: 40, // Pixel border (hidden off page)
 };
 
 const getAutoWidth = () =>
   image.ratio > document.body.clientWidth / document.body.clientHeight;
+
+const getWrapperDimensions = (ratio) => ({
+  height: document.body.clientHeight,
+  width: document.body.clientHeight * ratio,
+});
 
 export default defineComponent({
   name: "Canvas",
@@ -32,7 +51,15 @@ export default defineComponent({
     imgTop: -image.padding,
     imgLeft: -image.padding,
     autoWidth: true,
+    wrapDimensions: {
+      height: 1080,
+      width: 1920,
+    },
+    textConfig,
   }),
+  components: {
+    Letters,
+  },
   methods: {
     handleMouseMove(e) {
       let horizontalPosition = image.padding;
@@ -53,6 +80,7 @@ export default defineComponent({
     },
     handleResize() {
       this.autoWidth = getAutoWidth();
+      this.wrapDimensions = getWrapperDimensions(image.ratio);
     },
   },
   beforeMount() {
@@ -60,6 +88,7 @@ export default defineComponent({
   },
   mounted() {
     this.autoWidth = getAutoWidth();
+    this.wrapDimensions = getWrapperDimensions(image.ratio);
     window.addEventListener("resize", this.handleResize);
   },
   beforeUnmount() {
@@ -70,12 +99,30 @@ export default defineComponent({
 </script>
 
 <style scoped>
+.c {
+  /* display: none; */
+  background: url("./../assets/text/C(light).svg");
+  background-repeat: no-repeat;
+  width: 5.3%;
+  height: 999px;
+  position: absolute;
+  top: 36.8%;
+  left: 34.1%;
+}
+
 .background {
+  /* background: none; */
   background: url("./../assets/background.jpg");
   background-repeat: no-repeat;
 }
 
+.wrapper {
+  position: relative;
+  flex-shrink: 0;
+}
+
 .temp {
+  /* display: none; */
   background: url("./../assets/temp-for-placement.png");
   background-repeat: no-repeat;
   background-size: auto calc(100vh + 80px);
