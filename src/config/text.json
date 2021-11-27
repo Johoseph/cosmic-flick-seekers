@@ -1,9 +1,146 @@
 [
   {
     "id": 1,
-    "file": "C(light).svg",
-    "width": "5.3%",
-    "top": "36.8%",
-    "left": "34.1%"
+    "file": "C-light.svg",
+    "width": "5.05%",
+    "top": "37%",
+    "left": "34.3%",
+    "colour": "rgb(170, 161, 200)"
+  },
+  {
+    "id": 2,
+    "file": "O.svg",
+    "width": "5.65%",
+    "top": "35.5%",
+    "left": "39.1%",
+    "colour": "rgb(170, 161, 200)"
+  },
+  {
+    "id": 3,
+    "file": "S-light.svg",
+    "width": "4.5%",
+    "top": "33.3%",
+    "left": "44.7%",
+    "colour": "rgb(170, 161, 200)"
+  },
+  {
+    "id": 4,
+    "file": "M.svg",
+    "width": "6.15%",
+    "top": "32%",
+    "left": "49.15%",
+    "colour": "rgb(170, 161, 200)"
+  },
+  {
+    "id": 5,
+    "file": "I-light.svg",
+    "width": "2.8%",
+    "top": "31.75%",
+    "left": "55%",
+    "colour": "rgb(170, 161, 200)"
+  },
+  {
+    "id": 6,
+    "file": "C-light.svg",
+    "width": "5.05%",
+    "top": "30.6%",
+    "left": "57.7%",
+    "colour": "rgb(170, 161, 200)"
+  },
+  {
+    "id": 7,
+    "file": "F.svg",
+    "width": "4.5%",
+    "top": "45.9%",
+    "left": "39.15%",
+    "colour": "rgb(150,122,161)"
+  },
+  {
+    "id": 8,
+    "file": "L.svg",
+    "width": "3.9%",
+    "top": "45.7%",
+    "left": "43.15%",
+    "colour": "rgb(150,122,161)"
+  },
+  {
+    "id": 9,
+    "file": "I-med.svg",
+    "width": "2.8%",
+    "top": "44.1%",
+    "left": "46.8%",
+    "colour": "rgb(150,122,161)"
+  },
+  {
+    "id": 9,
+    "file": "C-med.svg",
+    "width": "5.05%",
+    "top": "43.15%",
+    "left": "49.3%",
+    "colour": "rgb(150,122,161)"
+  },
+  {
+    "id": 10,
+    "file": "K-med.svg",
+    "width": "5.05%",
+    "top": "41.6%",
+    "left": "54.15%",
+    "colour": "rgb(150,122,161)"
+  },
+  {
+    "id": 11,
+    "file": "S-dark.svg",
+    "width": "4.5%",
+    "top": "58%",
+    "left": "34.45%",
+    "colour": "rgb(25,42,81)"
+  },
+  {
+    "id": 12,
+    "file": "E.svg",
+    "width": "4.5%",
+    "top": "56.6%",
+    "left": "38.85%",
+    "colour": "rgb(25,42,81)"
+  },
+  {
+    "id": 13,
+    "file": "E.svg",
+    "width": "4.5%",
+    "top": "55.45%",
+    "left": "43.05%",
+    "colour": "rgb(25,42,81)"
+  },
+  {
+    "id": 14,
+    "file": "K-dark.svg",
+    "width": "5.05%",
+    "top": "53.95%",
+    "left": "47.4%",
+    "colour": "rgb(25,42,81)"
+  },
+  {
+    "id": 15,
+    "file": "E.svg",
+    "width": "4.5%",
+    "top": "52.8%",
+    "left": "52.1%",
+    "colour": "rgb(25,42,81)"
+  },
+  {
+    "id": 16,
+    "file": "R.svg",
+    "width": "4.5%",
+    "top": "51.7%",
+    "left": "56.5%",
+    "colour": "rgb(25,42,81)"
+  },
+  {
+    "id": 17,
+    "file": "S-dark.svg",
+    "width": "4.5%",
+    "top": "49.7%",
+    "left": "61.15%",
+    "colour": "rgb(25,42,81)"
   }
 ]

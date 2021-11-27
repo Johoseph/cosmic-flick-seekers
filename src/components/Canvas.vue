@@ -99,17 +99,6 @@ export default defineComponent({
 </script>
 
 <style scoped>
-.c {
-  /* display: none; */
-  background: url("./../assets/text/C(light).svg");
-  background-repeat: no-repeat;
-  width: 5.3%;
-  height: 999px;
-  position: absolute;
-  top: 36.8%;
-  left: 34.1%;
-}
-
 .background {
   /* background: none; */
   background: url("./../assets/background.jpg");
