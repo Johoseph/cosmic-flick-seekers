@@ -1,19 +1,15 @@
 <template>
-  <component :is="'style'" type="text/css">
-    .img-move { top: {{ imgTop }}px; left: {{ imgLeft }}px; }
-  </component>
-  <div class="w-screen h-screen overflow-hidden relative">
-    <img
-      class="absolute object-cover object-center mw-auto mh-auto img-custom img-move"
-      src="./../assets/background.jpg"
-      role="presentation"
-    />
-  </div>
+  <div
+    class="div-custom img-move w-screen h-screen overflow-hidden fixed"
+    :style="{
+      backgroundPositionX: `${imgLeft}px`,
+      backgroundPositionY: `${imgTop}px`,
+    }"
+  />
 </template>
 
 <script>
 import { defineComponent } from "vue";
-
 export default defineComponent({
   name: "Canvas",
   data: () => ({
@@ -22,7 +18,8 @@ export default defineComponent({
   }),
   methods: {
     handleMouseMove(e) {
-      console.log(e);
+      this.imgTop = -40 + e.clientY / 80;
+      this.imgLeft = -40 + e.clientX / 80;
     },
   },
   beforeMount() {
@@ -35,9 +32,9 @@ export default defineComponent({
 </script>
 
 <style scoped>
-.img-custom {
-  width: calc(100vw + 80px);
-  height: calc(100vh + 80px);
-  max-width: unset;
+.div-custom {
+  background: url("./../assets/background.jpg");
+  background-repeat: no-repeat;
+  background-size: calc(100vw + 80px) calc(100vh + 80px);
 }
 </style>
