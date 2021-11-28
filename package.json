@@ -3,8 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
+    "dev": "vue-cli-service serve",
     "build": "vue-cli-service build",
+    "serve": "serve -s dist",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
@@ -26,6 +27,7 @@
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-vue": "^7.0.0",
     "prettier": "^2.2.1",
+    "serve": "^13.0.2",
     "vue-cli-plugin-tailwind": "~2.2.17"
   }
 }
