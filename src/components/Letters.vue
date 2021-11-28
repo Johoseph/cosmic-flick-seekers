@@ -28,13 +28,13 @@ export default defineComponent({
       return images(`./${letter}`);
     },
     handleHover() {
-      const topInt = parseInt(this.top.replace("%", ""), 10);
+      const topInt = parseFloat(this.top.replace("%", ""), 10);
 
       this.top = `${topInt - 4}%`;
       this.scale = 1.1;
     },
     handleLeave() {
-      const topInt = parseInt(this.top.replace("%", ""), 10);
+      const topInt = parseFloat(this.top.replace("%", ""), 10);
 
       this.top = `${topInt + 4}%`;
       this.scale = 1;
