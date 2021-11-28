@@ -3,7 +3,7 @@
     class="static-letter absolute z-50"
     :style="{
       width: `${config.width}`,
-      top: `${config.top}`,
+      top: `${top}`,
       left: `${config.left}`,
       background: `url(${getImgUrl(config.file)})`,
       transform: `scale(${scale})`,
@@ -27,14 +27,21 @@ export default defineComponent({
       const images = require.context("./../assets/text/", false, /\.svg$/);
       return images(`./${letter}`);
     },
-    handleHover(e) {
-      const letterPos = e.target.getBoundingClientRect();
+    handleHover() {
+      const topInt = parseInt(this.top.replace("%", ""), 10);
 
-      if (e.clientY - letterPos.y <= 115) this.scale = 1.1;
+      this.top = `${topInt - 4}%`;
+      this.scale = 1.1;
     },
     handleLeave() {
+      const topInt = parseInt(this.top.replace("%", ""), 10);
+
+      this.top = `${topInt + 4}%`;
       this.scale = 1;
     },
+  },
+  beforeCreate() {
+    this.top = this.config.top;
   },
 });
 </script>
@@ -42,8 +49,9 @@ export default defineComponent({
 <style scoped>
 .static-letter {
   /* display: none; */
-  height: 700px;
+  height: 115px;
   background-repeat: no-repeat !important;
-  transition: transform 800ms cubic-bezier(0.17, 0.67, 0.64, 0.92);
+  transition: transform 800ms cubic-bezier(0.17, 0.67, 0.64, 0.92),
+    top 800ms cubic-bezier(0.17, 0.67, 0.64, 0.92);
 }
 </style>
