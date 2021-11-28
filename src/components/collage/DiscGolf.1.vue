@@ -1,6 +1,6 @@
 <template>
-  <div data-content="Day 1" class="absolute w-full h-full">
-    <div class="scale bg-img absolute" />
+  <div data-content="Day 1">
+    <div class="scale bg-img absolute pointer-events-none" />
     <svg
       version="1.2"
       baseProfile="tiny-ps"
