@@ -1,6 +1,6 @@
 <template>
   <div
-    class="static-letter absolute z-50"
+    class="static-letter absolute z-40"
     :style="{
       width: `${config.width}`,
       top: `${top}`,
