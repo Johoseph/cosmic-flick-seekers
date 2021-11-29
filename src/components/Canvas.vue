@@ -1,5 +1,4 @@
 <template>
-  <!-- <div class="temp fixed w-screen h-screen" /> -->
   <div
     class="background img-move w-screen h-screen overflow-hidden fixed flex justify-center"
     :style="{
@@ -109,7 +108,6 @@ export default defineComponent({
 
 <style scoped>
 .background {
-  /* background: none; */
   background: url("./../assets/background.jpg");
   background-repeat: no-repeat;
 }
@@ -120,7 +118,6 @@ export default defineComponent({
 }
 
 .temp {
-  /* display: none; */
   background: url("./../assets/temp-for-placement.png");
   background-repeat: no-repeat;
   background-size: auto calc(100vh + 80px);

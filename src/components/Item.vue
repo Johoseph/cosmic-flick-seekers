@@ -31,7 +31,6 @@ export default defineComponent({
 
 <style scoped>
 .static-item {
-  /* display: none; */
   background-repeat: no-repeat !important;
   background-size: 100% !important;
   height: 999px;
