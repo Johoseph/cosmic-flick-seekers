@@ -27,7 +27,7 @@
 
 <script>
 import { defineComponent } from "vue";
-import config from "./../config/collage.json";
+import { filterCollageItems } from "./../helpers";
 import Tooltip from "./Tooltip.vue";
 
 const tltpSize = 48;
@@ -36,7 +36,7 @@ const tltpOffset = 10;
 export default defineComponent({
   name: "Svg",
   data: () => ({
-    config,
+    config: filterCollageItems(),
     day: undefined,
     position: {
       top: 0,
