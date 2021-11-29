@@ -116,11 +116,4 @@ export default defineComponent({
   position: relative;
   flex-shrink: 0;
 }
-
-.temp {
-  background: url("./../assets/temp-for-placement.png");
-  background-repeat: no-repeat;
-  background-size: auto calc(100vh + 80px);
-  background-position: center;
-}
 </style>
