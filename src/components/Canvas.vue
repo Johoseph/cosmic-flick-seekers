@@ -12,7 +12,7 @@
     <div
       class="wrapper"
       :style="{
-        right: `${imgLeft}px`,
+        right: `${wrappingRight}px`,
         bottom: `${imgTop}px`,
         width: `${wrapDimensions.width}px`,
         height: `${wrapDimensions.height}px`,
@@ -57,6 +57,7 @@ export default defineComponent({
   data: () => ({
     imgTop: -image.padding,
     imgLeft: -image.padding,
+    wrappingRight: -image.padding,
     autoWidth: true,
     wrapDimensions: {
       height: 1080,
@@ -85,6 +86,7 @@ export default defineComponent({
 
       this.imgTop = -image.padding + e.clientY / (image.padding * 2);
       this.imgLeft = -horizontalPosition + e.clientX / (image.padding * 2);
+      this.wrappingRight = -image.padding + e.clientX / (image.padding * 2);
     },
     handleResize() {
       this.autoWidth = getAutoWidth();
