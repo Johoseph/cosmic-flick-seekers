@@ -112,8 +112,8 @@ export default defineComponent({
           return first.day < second.day ? -1 : 1;
         } else {
           if (first.day === second.day) return 0;
-          if (this.playingIndex === first.day) return -1;
-          if (this.playingIndex === second.day) return 1;
+          if (this.playingIndex === first.day - 1) return -1;
+          if (this.playingIndex === second.day - 1) return 1;
           return Math.random() > 0.5 ? -1 : 1;
         }
       });
