@@ -1,5 +1,5 @@
 <template>
-  <div class="fixed bottom-12 right-20">
+  <div class="fixed bottom-12 right-20 player">
     <div
       class="w-full h-12 mb-4 rounded-full text-scroll relative px-2 overflow-hidden"
       @mouseenter="handleAnimationPause(`paused`)"
@@ -116,7 +116,7 @@ export default defineComponent({
     "currentSong",
   ],
   data: () => ({
-    playState: "paused",
+    playState: "running",
   }),
   methods: {
     handleAnimationPause(state) {
@@ -138,6 +138,19 @@ export default defineComponent({
 </script>
 
 <style scoped>
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.player {
+  animation: fadein 1s linear;
+}
+
 button {
   background: #393840eb;
   display: flex;

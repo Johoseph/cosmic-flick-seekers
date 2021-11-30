@@ -1,6 +1,7 @@
 <template>
   <Canvas />
   <Player
+    v-if="!!howler"
     :isPlaying="isPlaying"
     :currentSong="songArray[playingIndex].title"
     :handlePlay="handlePlay"
@@ -38,6 +39,7 @@ const songArray = filterCollageItems()
 export default defineComponent({
   name: "App",
   data: () => ({
+    howler: null,
     songArray,
     isPlaying: false,
     isLooping: false,
@@ -77,7 +79,7 @@ export default defineComponent({
     handleNext(trigger) {
       if (trigger !== "onend" || (trigger === "onend" && !this.isLooping)) {
         this.howler?.unload();
-        this.howler = undefined;
+        this.howler = null;
 
         if (this.playingIndex === this.songArray.length - 1)
           this.playingIndex = 0;
@@ -89,7 +91,7 @@ export default defineComponent({
     },
     handlePrevious() {
       this.howler?.unload();
-      this.howler = undefined;
+      this.howler = null;
 
       if (this.playingIndex === 0)
         this.playingIndex = this.songArray.length - 1;
@@ -136,7 +138,7 @@ export default defineComponent({
       }
 
       this.howler?.unload();
-      this.howler = undefined;
+      this.howler = null;
       this.handlePlay();
     },
   },
