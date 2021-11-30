@@ -1,4 +1,5 @@
 <template>
+  <Loader v-if="isLoading" />
   <Canvas />
   <Player
     v-if="!!howler"
@@ -20,6 +21,7 @@ import { defineComponent } from "vue";
 import { Howl } from "howler";
 import Canvas from "./components/Canvas.vue";
 import Player from "./components/Player.vue";
+import Loader from "./components/Loader.vue";
 
 import { filterCollageItems } from "./helpers";
 
@@ -39,6 +41,7 @@ const songArray = filterCollageItems()
 export default defineComponent({
   name: "App",
   data: () => ({
+    isLoading: true,
     howler: null,
     songArray,
     isPlaying: false,
@@ -55,6 +58,7 @@ export default defineComponent({
   components: {
     Canvas,
     Player,
+    Loader,
   },
   methods: {
     initialiseHowler() {
@@ -142,6 +146,12 @@ export default defineComponent({
       this.howler = null;
       this.handlePlay();
     },
+  },
+  beforeMount() {
+    this.timeout = setTimeout(() => (this.isLoading = false), 3500);
+  },
+  beforeUnmount() {
+    clearTimeout(this.timeout);
   },
 });
 </script>
