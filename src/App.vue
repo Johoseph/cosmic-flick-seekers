@@ -42,6 +42,11 @@ export default defineComponent({
     isShuffled: false,
     playingIndex: 0,
   }),
+  provide() {
+    return {
+      handlePick: this.handlePick,
+    };
+  },
   components: {
     Canvas,
     Player,

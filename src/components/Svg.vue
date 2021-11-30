@@ -13,8 +13,9 @@
       :style="{
         transform: `translate(${item.left}, ${item.top}) scale(109%)`,
       }"
-      v-on:mousemove="handleMouseMove($event, item.day)"
-      v-on:mouseleave="handleMouseLeave()"
+      @mousemove="handleMouseMove($event, item.day)"
+      @mouseleave="handleMouseLeave()"
+      @click="handlePick(item.day)"
     />
   </svg>
   <Tooltip
@@ -35,6 +36,7 @@ const tltpOffset = 10;
 
 export default defineComponent({
   name: "Svg",
+  inject: ["handlePick"],
   data: () => ({
     config: filterCollageItems(),
     day: undefined,
