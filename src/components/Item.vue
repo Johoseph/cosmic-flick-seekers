@@ -6,7 +6,7 @@
       width: `${config.width}`,
       top: `${config.top}`,
       left: `${config.left}`,
-      background: `url(${getImgUrl(config.file)})`,
+      background: `url(${getImgUrl(config.day)})`,
     }"
   />
 </template>
@@ -21,9 +21,9 @@ export default defineComponent({
   }),
   props: ["config"],
   methods: {
-    getImgUrl(image) {
+    getImgUrl(day) {
       const images = require.context("./../assets/collage/", false, /\.png$/);
-      return images(`./${image}`);
+      return images(`./${day}.png`);
     },
   },
 });
