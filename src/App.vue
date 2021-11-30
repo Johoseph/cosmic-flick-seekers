@@ -9,6 +9,8 @@
     :handlePrevious="handlePrevious"
     :handleLoop="handleLoop"
     :handleShuffle="handleShuffle"
+    :isLooping="isLooping"
+    :isShuffled="isShuffled"
   />
 </template>
 
