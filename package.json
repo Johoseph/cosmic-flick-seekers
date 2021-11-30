@@ -19,6 +19,7 @@
     "vue": "^3.0.0"
   },
   "devDependencies": {
+    "@types/howler": "^2.2.4",
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
