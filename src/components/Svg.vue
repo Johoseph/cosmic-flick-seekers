@@ -4,7 +4,7 @@
     baseProfile="tiny-ps"
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 1920 1080"
-    class="absolute scale opacity-0"
+    class="absolute scale"
   >
     <g
       v-for="item in config"
@@ -13,6 +13,7 @@
       :style="{
         transform: `translate(${item.left}, ${item.top}) scale(109%)`,
       }"
+      :class="`${checkIfToday(item.day) && !howler() ? `current` : ``}`"
       @mousemove="handleMouseMove($event, item.day)"
       @mouseleave="handleMouseLeave()"
       @click="handlePick(item.day)"
@@ -28,7 +29,7 @@
 
 <script>
 import { defineComponent } from "vue";
-import { filterCollageItems } from "./../helpers";
+import { filterCollageItems, checkCurrentDay } from "./../helpers";
 import Tooltip from "./Tooltip.vue";
 
 const tltpSize = 48;
@@ -36,7 +37,7 @@ const tltpOffset = 10;
 
 export default defineComponent({
   name: "Svg",
-  inject: ["handlePick"],
+  inject: ["handlePick", "howler"],
   data: () => ({
     config: filterCollageItems(),
     day: undefined,
@@ -70,6 +71,9 @@ export default defineComponent({
     handleMouseLeave() {
       this.day = undefined;
     },
+    checkIfToday(day) {
+      return checkCurrentDay(day);
+    },
   },
 });
 </script>
@@ -77,5 +81,20 @@ export default defineComponent({
 <style scoped>
 svg g {
   cursor: crosshair;
+}
+</style>
+
+<style>
+@keyframes glow {
+  from {
+    fill: #ffffff00;
+  }
+  to {
+    fill: #ffffff4d;
+  }
+}
+
+.current path {
+  animation: glow 1s linear alternate infinite;
 }
 </style>

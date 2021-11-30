@@ -49,6 +49,7 @@ export default defineComponent({
   provide() {
     return {
       handlePick: this.handlePick,
+      howler: () => this.howler,
     };
   },
   components: {
