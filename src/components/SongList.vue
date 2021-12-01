@@ -3,8 +3,6 @@
     class="w-full mb-4 rounded-3xl text-scroll relative px-2 overflow-hidden outline-none"
     role="button"
     tabindex="0"
-    @mouseenter="handleAnimationPause(`paused`)"
-    @mouseleave="handleAnimationPause(`running`)"
     :style="{
       height: `${showAll ? showAllHeight : `3rem`}`,
       transition: `${showAll ? `height 500ms linear` : ``}`,
@@ -30,6 +28,8 @@
       <div
         v-if="currentSong === song.title"
         :class="`${showAll ? `h-7` : `h-12`}`"
+        @mouseenter="handleAnimationPause(`paused`)"
+        @mouseleave="handleAnimationPause(`running`)"
       >
         <div
           v-for="index in 4"
