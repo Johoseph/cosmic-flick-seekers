@@ -44,7 +44,7 @@ const songArray = filterCollageItems()
 export default defineComponent({
   name: "App",
   data: () => ({
-    isLoading: !process.env.VUE_APP_DISABLE_LOADING == 1,
+    isLoading: process.env.VUE_APP_DISABLE_LOADING != 1,
     howler: null,
     songArray,
     isPlaying: false,
