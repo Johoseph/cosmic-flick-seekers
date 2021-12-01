@@ -1,25 +1,10 @@
 <template>
   <div class="fixed bottom-12 right-20 player">
-    <div
-      class="w-full h-12 mb-4 rounded-full text-scroll relative px-2 overflow-hidden"
-      @mouseenter="handleAnimationPause(`paused`)"
-      @mouseleave="handleAnimationPause(`running`)"
-    >
-      <div
-        v-for="index in 4"
-        :key="index"
-        class="h-full py-3 text-scroll-item absolute whitespace-nowrap absolute left-6"
-        :class="`text-scroll-item-${index}`"
-        :style="{
-          animationPlayState: `${playState}`,
-          animationDuration: `${animationLength}`,
-        }"
-      >
-        {{ currentSong }} —&nbsp;
-      </div>
-      <div class="absolute top-0 left-0 h-full w-8 gradient-left" />
-      <div class="absolute top-0 right-0 h-full w-8 gradient-right" />
-    </div>
+    <SongList
+      :isPlaying="isPlaying"
+      :currentSong="currentSong"
+      :songArray="songArray"
+    />
     <div class="flex">
       <button class="mr-4" @click="handleShuffle">
         <svg
@@ -100,6 +85,7 @@
 
 <script>
 import { defineComponent } from "vue";
+import SongList from "./SongList.vue";
 
 export default defineComponent({
   name: "Player",
@@ -114,25 +100,10 @@ export default defineComponent({
     "isLooping",
     "isShuffled",
     "currentSong",
+    "songArray",
   ],
-  data: () => ({
-    playState: "running",
-  }),
-  methods: {
-    handleAnimationPause(state) {
-      if (!this.isPlaying) this.playState = "paused";
-      else this.playState = state;
-    },
-  },
-  watch: {
-    isPlaying: function (state) {
-      this.playState = state ? "running" : "paused";
-    },
-  },
-  computed: {
-    animationLength: function () {
-      return `${Math.round((this.currentSong.length / 3) * 1000)}ms`;
-    },
+  components: {
+    SongList,
   },
 });
 </script>
@@ -175,69 +146,5 @@ svg {
 button:hover > svg,
 button:focus-visible > svg {
   transform: scale(1.2);
-}
-
-.text-scroll {
-  background: #393840eb;
-}
-
-@keyframes marquee-1 {
-  from {
-    transform: translateX(250%);
-  }
-  to {
-    transform: translateX(50%);
-  }
-}
-
-@keyframes marquee-2 {
-  from {
-    transform: translateX(150%);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
-
-@keyframes marquee-3 {
-  from {
-    transform: translateX(50%);
-  }
-  to {
-    transform: translateX(-150%);
-  }
-}
-
-@keyframes marquee-4 {
-  from {
-    transform: translateX(-50%);
-  }
-  to {
-    transform: translateX(-250%);
-  }
-}
-
-.text-scroll-item-1 {
-  animation: marquee-1 linear infinite;
-}
-
-.text-scroll-item-2 {
-  animation: marquee-2 linear infinite;
-}
-
-.text-scroll-item-3 {
-  animation: marquee-3 linear infinite;
-}
-
-.text-scroll-item-4 {
-  animation: marquee-4 linear infinite;
-}
-
-.gradient-left {
-  background: linear-gradient(to right, #393840 40%, transparent);
-}
-
-.gradient-right {
-  background: linear-gradient(to left, #393840 40%, transparent);
 }
 </style>

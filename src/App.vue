@@ -14,6 +14,7 @@
     :handleShuffle="handleShuffle"
     :isLooping="isLooping"
     :isShuffled="isShuffled"
+    :songArray="songArray"
   />
 </template>
 
