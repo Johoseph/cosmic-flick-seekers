@@ -160,6 +160,7 @@ button {
   width: 3rem;
   height: 3rem;
   padding: 10px;
+  outline: none;
 }
 
 svg {
@@ -171,7 +172,8 @@ svg {
   transition: transform 200ms;
 }
 
-button:hover > svg {
+button:hover > svg,
+button:focus-visible > svg {
   transform: scale(1.2);
 }
 

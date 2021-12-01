@@ -1,6 +1,7 @@
 <template>
   <Loader v-if="isLoading" />
   <Canvas />
+  <Info />
   <Player
     v-if="!!howler"
     :isPlaying="isPlaying"
@@ -22,6 +23,7 @@ import { Howl } from "howler";
 import Canvas from "./components/Canvas.vue";
 import Player from "./components/Player.vue";
 import Loader from "./components/Loader.vue";
+import Info from "./components/Info.vue";
 
 import { filterCollageItems } from "./helpers";
 
@@ -41,7 +43,7 @@ const songArray = filterCollageItems()
 export default defineComponent({
   name: "App",
   data: () => ({
-    isLoading: true,
+    isLoading: !process.env.VUE_APP_DISABLE_LOADING == 1,
     howler: null,
     songArray,
     isPlaying: false,
@@ -59,6 +61,7 @@ export default defineComponent({
     Canvas,
     Player,
     Loader,
+    Info,
   },
   methods: {
     initialiseHowler() {
