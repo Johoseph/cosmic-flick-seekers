@@ -1,7 +1,9 @@
 .DS_Store
 node_modules
 /dist
-/src/assets/songs
+/src/assets/songs/*
+!/src/assets/songs/example1.mp3
+!/src/assets/songs/example2.mp3
 
 # local env files
 .env

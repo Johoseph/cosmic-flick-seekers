@@ -36,7 +36,11 @@ const getSong = (song) => {
 const songArray = filterCollageItems()
   .sort((first, second) => (first.day < second.day ? -1 : 1))
   .map((item) => ({
-    asset: getSong(item.day),
+    asset: getSong(
+      process.env.VUE_APP_EXAMPLE_SONGS != 1
+        ? item.day
+        : `${item.day % 2 === 1 ? "example1" : "example2"}`
+    ),
     day: item.day,
     title: item.title,
   }));
