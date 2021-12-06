@@ -2,7 +2,15 @@
 
 Comsic Flick Seekers (CFS) is a 2021 Advent Calendar that was made specially for my partner Flick. The concept draws inspiration from the [album artwork](https://thefader-res.cloudinary.com/private_images/w_760,c_limit,f_auto,q_auto:best/Cosmic_Thrill_Seekers_Collage_Final_ektulh/prince-daddy-and-the-hyena-cosmic-thrill-seekers-album-stream-premiere-interview.jpg) for Prince Daddy and The Hyena's second studio album [Cosmic Thrill Seekers](https://princedaddyandthehyena.bandcamp.com/album/cosmic-thrill-seekers). This project is the successor to the [Advent Gifmas](https://github.com/Johoseph/advent-gifmas) calendar that was made for the 2020 season and has been made with [Vue](https://vuejs.org/).
 
-![image](https://user-images.githubusercontent.com/49534136/144743426-ef069023-b7c5-47a0-93fd-2945c602f802.png)
+<details>
+<summary>
+    <span style="font-size:14px"><b>SPOILER WARNING</b> - This expandable menu contains a screenshot of the completed collage.</span>
+</summary>
+
+<p>
+    <image src="https://user-images.githubusercontent.com/49534136/144743426-ef069023-b7c5-47a0-93fd-2945c602f802.png" alt="Cosmic Flick Seekers Screenshot"/>
+</p>
+</details>
 
 ## How does it work?
 
