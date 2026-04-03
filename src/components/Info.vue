@@ -62,7 +62,6 @@ export default defineComponent({
 
 <style scoped>
 .info-text {
-  min-width: fit-content;
   transition: top 500ms linear, height 500ms linear, opacity 500ms linear;
 }
 
